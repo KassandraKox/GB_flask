@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container mt-3">
+        <p class="text-success lead">Приветствую тебя, {{ name }}</p>
+        <p class="text-success lead">Вход выполнен успешно</p>
+        <a href="/cookie_task/logout/" class="btn btn-outline-dark">Выйти</a>
+    </div>
+{% endblock %}

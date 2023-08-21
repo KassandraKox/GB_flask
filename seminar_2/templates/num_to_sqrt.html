@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form class="mt-3" method="post">
+            <div class="mb-3 col-4">
+                <label for="exampleFormControlInput1" class="form-label">Число</label>
+                <input type="text" class="form-control" name="num" id="exampleFormControlInput1"
+                       placeholder="Введите число">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Отправить</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
