@@ -54,7 +54,7 @@ def text_form_page():
     if request.method == 'POST':
         text = request.form.get('text')
         return redirect(url_for('text_page', text_1=text))
-    return render_template('text_form_page.html')
+    return render_template('register.html')
 
 
 @app.route('/text-page/')
@@ -65,7 +65,7 @@ def text_page():
         'text': text_1,
         'len_text': len(word_count)
     }
-    return render_template('text_page.html', **context)
+    return render_template('users.html', **context)
 
 
 @app.route('/calc/', methods=['GET', 'POST'])

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Faculties</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>Title</th>
+            </tr>
+            {% for faculty in faculties %}
+                <tr>
+                    <td class="col-2">{{ faculty }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <hr>
+        <h2>Students</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Group</th>
+                <th>Faculty</th>
+            </tr>
+            {% for student in students %}
+                <tr>
+                    <td class="col-2">{{ student.first_name }}</td>
+                    <td class="col-2">{{ student.last_name }}</td>
+                    <td class="col-2">{{ student.age }}</td>
+                    <td class="col-2">{{ student.gender }}</td>
+                    <td class="col-2">{{ student.group }}</td>
+                    <td class="col-2">{{ student.faculty }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

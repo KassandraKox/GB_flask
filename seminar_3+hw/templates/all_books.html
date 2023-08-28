@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Books</h2>
+        {% for books in book_list %}
+            <table class="table table-bordered">
+            <tr>
+                <th>{{ books[0].author }}</th>
+            </tr>
+                <tr>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Available quantity</th>
+                </tr>
+                {% for book in books %}
+                    <tr>
+                    <td class="col-2">{{ book.title }}</td>
+                    <td class="col-2">{{ book.year }}</td>
+                    <td class="col-2">{{ book.count }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -64,7 +64,7 @@ def num_to_sqrt_result():
         "sqrt": request.args.get("sqrt"),
     }
 
-    return render_template("num_to_sqrt_result.html", **context)
+    return render_template("login.html", **context)
 
 
 @app.route("/flash_task/", methods=["GET", "POST"])

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Students and Scores</h2>
+
+        {% for scores in scores_list.items() %}
+            <table class="table table-bordered">
+                <tr>
+                    <th>{{ scores[0] }}</th>
+                </tr>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Group</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td class="col-2">{{ scores[0].first_name }}</td>
+                    <td class="col-2">{{ scores[0].last_name }}</td>
+                    <td class="col-2">{{ scores[0].group }}</td>
+                    <td class="col-2">{{ scores[0].email }}</td>
+                </tr>
+                <tr>
+                    <th>Scores</th>
+                </tr>
+                {% if scores[1] %}
+                    {% for score in scores[1] %}
+                        <tr>
+                            <td class="col-2">{{ score.subject_title }}</td>
+                            <td class="col-2">{{ score.score }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td class="text-danger">Scores not found</td>
+                    </tr>
+                {% endif %}
+                <br>
+            </table>
+        {% endfor %}
+
+    </div>
+{% endblock %}
